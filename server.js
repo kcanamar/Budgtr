@@ -5,7 +5,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3001
-const budgets = require('./models/budgets.js')
+const budget = require('./models/budgets.js')
 //////////////////////
 // Declare Middleware
 //////////////////////
@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended: false}))
 // Declare Routes and Routers 
 ///////////////////////
 app.get("/budgets", (req, res) => {
-    res.render("index.ejs")
+    res.render("index.ejs", {budget: budget})
 })
 app.get("/budgets/new", (req, res) => {
     res.render("new.ejs")
