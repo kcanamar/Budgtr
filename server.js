@@ -15,13 +15,13 @@ app.use(express.urlencoded({extended: false}))
 // Declare Routes and Routers 
 ///////////////////////
 app.get("/budgets", (req, res) => {
-    res.send("Index")
+    res.render("index.ejs")
 })
 app.get("/budgets/new", (req, res) => {
-    res.send("New")
+    res.render("new.ejs")
 })
 app.get("/budgets/:id", (req, res) => {
-    res.send("Show")
+    res.render("show.ejs")
 })
 app.post("/budgets", (req, res) => {
     console.log('Create route accessed!')
