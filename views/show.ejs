@@ -1,2 +1,10 @@
 <%- include('./partials/head.ejs') %>
-<h1>Show</h1>
+<div class="container" x-data="{show: false}">
+    <h1><%=budget.name%></h1>
+    <a href="/budgets"><button>Go back</button></a>
+    <h3>Date</h3><p><%=budget.date%></p>
+    <h3>Name</h3><p><%=budget.name%></p>
+    <h3>From</h3><p><%=budget.from%></p>
+    <h3>Amount</h3><p><%=budget.amount%></p>
+    <h3>Tags</h3><p><%=budget.tags.join(", ")%></p>
+</div>

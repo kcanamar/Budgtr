@@ -21,7 +21,7 @@ app.get("/budgets/new", (req, res) => {
     res.render("new.ejs")
 })
 app.get("/budgets/:id", (req, res) => {
-    res.render("show.ejs")
+    res.render("show.ejs", {budget: budgets[req.params.id]})
 })
 app.post("/budgets", (req, res) => {
     console.log('Create route accessed!')
