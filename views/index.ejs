@@ -2,6 +2,16 @@
 <div class="container">
     <h1>Budget All</h1>
     <table>
-        
-    </table>
+        <tr>
+           <th>Date</th><th>Name</th><th>Amount</th>
+        </tr>
+     
+        <% for (let budget in budgets) { %>
+         <tr>
+           <td><%= budgets[budget].date %></td>
+           <td><a href="/budgets/<%=budget%>"><%= budgets[budget].name %></a></td>
+           <td><%= budgets[budget].amount %></td>
+         </tr>    
+        <% } %>
+     </table>
 </div>
