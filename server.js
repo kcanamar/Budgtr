@@ -3,6 +3,7 @@
 ////////////////////////
 require('dotenv').config()
 const express = require('express')
+const morgan = require('morgan')
 const app = express()
 const PORT = process.env.PORT || 3001
 const budgets = require('./models/budgets.js')
@@ -11,6 +12,7 @@ const budgets = require('./models/budgets.js')
 //////////////////////
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
+app.use(morgan('tiny'))
 ///////////////////////
 // Declare Routes and Routers 
 ///////////////////////
@@ -24,9 +26,8 @@ app.get("/budgets/:id", (req, res) => {
     res.render("show.ejs", {budget: budgets[req.params.id]})
 })
 app.post("/budgets", (req, res) => {
-    console.log('Create route accessed!')
-    console.log('req body is', req.body)
-    res.send('This route works')
+    budgets.push(req.body)
+    res.redirect('/budgets')
 })
 ///////////////////////////
 // Server Listener
