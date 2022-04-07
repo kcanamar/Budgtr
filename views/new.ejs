@@ -4,7 +4,9 @@
     <form action="/budgets" method="post">
         <label for="date"><input type="datetime" name="date" placeholder="Enter Date: Month/Day"></label><label for="name"><input type="text" name="name" placeholder="New Item Name"></label>
         <label for="amount"><input type="number" name="amount" placeholder="Enter the Amount"></label><label for="from"><input type="text" name="from" placeholder="From Whom/Where"></label>
-        <!-- <label for="tags"><input type="text" name="tags" placeholder="Tags"></label> -->
+        <label for="tags">
+        <p> Tags: Seperate each word with a ',' comma</p>
+        <input type="text" name="tags" placeholder="Tag Names"></label>
         <input type="submit" value="Create New Item">
     </form>
 </div>

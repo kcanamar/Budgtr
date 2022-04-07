@@ -26,6 +26,8 @@ app.get("/budgets/:id", (req, res) => {
     res.render("show.ejs", {budget: budgets[req.params.id]})
 })
 app.post("/budgets", (req, res) => {
+    req.body.tags = req.body.tags.split(',') 
+    console.log(req.body.tags)
     budgets.push(req.body)
     res.redirect('/budgets')
 })
