@@ -27,8 +27,7 @@ app.get("/budgets/:id", (req, res) => {
 })
 app.post("/budgets", (req, res) => {
     req.body.tags = req.body.tags.split(',') 
-    console.log(req.body.tags)
-    budgets.push(req.body)
+    budgets.unshift(req.body)
     res.redirect('/budgets')
 })
 ///////////////////////////

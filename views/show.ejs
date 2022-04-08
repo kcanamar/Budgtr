@@ -1,10 +1,9 @@
 <%- include('./partials/head.ejs') %>
 <div class="container" x-data="{show: false}">
     <h1><%=budget.name%></h1>
-    <a href="/budgets"><button>Go back</button></a>
-    <h3>Date</h3><p><%=budget.date%></p>
-    <h3>Name</h3><p><%=budget.name%></p>
-    <h3>From</h3><p><%=budget.from%></p>
-    <h3>Amount</h3><p><%=budget.amount%></p>
-    <h3>Tags</h3><p><%=budget.tags%></p>
+    <a href="/budgets"><button>Go back</button></a><button x-on:click="show = !show">Show More</button>
+    <h3 x-show="show">Date</h3><p x-show="show"><%=budget.date%></p>
+    <h3 x-show="show">From</h3><p x-show="show"><%=budget.from%></p>
+    <h3 x-show="show">Amount</h3><p x-show="show"><%=budget.amount%></p>
+    <h3 x-show="show">Tags</h3><p x-show="show"><%=budget.tags%></p>
 </div>
