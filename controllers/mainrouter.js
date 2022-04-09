@@ -39,6 +39,7 @@ router.get("/:id", (req, res) => {
 })
 // Create Route
 router.post("/", (req, res) => {
+    if (req.body.amount === "") {req.body.amount = "0"}
     req.body.tags = req.body.tags.split(',') 
     budgets.unshift(req.body)
     res.redirect('/budgets')
