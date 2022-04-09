@@ -1,7 +1,7 @@
 <%- include('./partials/head.ejs') %>
 <div class="container" >
     <h1>Budget All</h1>
-    <button hx-get="/budgets/new" hx-trigger="click" hx-target="#form-new" hx-swap="innerHTML">NEW ITEM</button>
+    <button hx-get="/budgets/new" hx-trigger="click" hx-target="#form-new" hx-swap="innerHTML">NEW ITEM</button> Current Bank Balance: <button class="balance <%=balanceColor()%>"><%=total%></button>
     <div id="form-new">
         
     </div>

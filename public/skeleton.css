@@ -378,8 +378,14 @@ hr {
   margin-bottom: 3.5rem;
   border-width: 0;
   border-top: 1px solid #E1E1E1; }
-
-
+.green{
+  color:white;
+  background-color:green;
+}
+.red{
+  color:white;
+  background-color:red;
+}
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 

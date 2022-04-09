@@ -1,35 +1,21 @@
 ////////////////////////
 // Setup - Import deps and create app object
 ////////////////////////
-require('dotenv').config()
 const express = require('express')
-const morgan = require('morgan')
+const middleware = require('./middleware/mid.js')
+const MainRouter = require('./controllers/mainrouter.js')
+require('dotenv').config()
 const app = express()
 const PORT = process.env.PORT || 3001
-const budgets = require('./models/budgets.js')
+
 //////////////////////
 // Declare Middleware
 //////////////////////
-app.use(express.static('public'))
-app.use(express.urlencoded({extended: false}))
-app.use(morgan('tiny'))
+middleware(app)
 ///////////////////////
 // Declare Routes and Routers 
 ///////////////////////
-app.get("/budgets", (req, res) => {
-    res.render("index.ejs", {budget: budgets})
-})
-app.get("/budgets/new", (req, res) => {
-    res.render("new.ejs")
-})
-app.get("/budgets/:id", (req, res) => {
-    res.render("show.ejs", {budget: budgets[req.params.id]})
-})
-app.post("/budgets", (req, res) => {
-    req.body.tags = req.body.tags.split(',') 
-    budgets.unshift(req.body)
-    res.redirect('/budgets')
-})
+app.use("/budgets", MainRouter)
 ///////////////////////////
 // Server Listener
 ///////////////////////////
