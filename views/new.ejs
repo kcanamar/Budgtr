@@ -2,11 +2,15 @@
 <div class="container">
     <h1>Create a New Item</h1>
     <form action="/budgets" method="post">
-        <label for="date"><input type="datetime" name="date" placeholder="Enter Date: Month/Day"></label><label for="name"><input type="text" name="name" placeholder="New Item Name"></label>
-        <label for="amount"><input type="number" name="amount" placeholder="Enter the Amount"></label><label for="from"><input type="text" name="from" placeholder="From Whom/Where"></label>
-        <label for="tags">
-        <p> Tags: Seperate each Tag with a comma "," </p>
-        <input type="text" name="tags" placeholder="Tag Names"></label>
+        <label for="date"><input type="datetime" name="date" placeholder="Enter Date: Month/Day"></label>
+        <label for="name"><input type="text" name="name" placeholder="New Item Name"></label>
+        <label for="amount"><input type="number" name="amount" placeholder="Enter the Amount"></label>
+        <label for="from"><input type="text" name="from" placeholder="From Whom/Where"></label>
+        <fieldset>
+            <label for="tags">
+            <Legend>Tags: Seperate each Tag Name with a comma. ","</Legend>  
+            <input type="text" name="tags" placeholder="Tag Names"></label>
+        </fieldset>
         <input type="submit" value="Create New Item">
     </form>
 </div>
